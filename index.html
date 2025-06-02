@@ -6,11 +6,11 @@
     <title>Unity WebGL Player | Nut_Bolt</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/@telegram-apps/sdk@2.11.0/dist/index.iife.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@telegram-apps/sdk@2.11.0/dist/index.iife.min.js"></script> -->
     <!--<script src="https://sad.adsgram.ai/js/sad.min.js"></script>-->
     <!--<script src="https://cdn.jsdelivr.net/npm/@tonconnect/sdk@3.0.5/dist/tonconnect-sdk.min.js"></script>-->
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics-compat.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-app-compat.js"></script> -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/11.2.0/firebase-analytics-compat.js"></script> -->
     <!-- <script src="./bundle.js"></script>  -->
 
 </head>
@@ -64,11 +64,11 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Build.loader.js";
+      var loaderUrl = buildUrl + "/WildSurvivorsBuild.loader.js";
       var config = {
-        dataUrl: buildUrl + "/Build.data",
-        frameworkUrl: buildUrl + "/Build.framework.js",
-        codeUrl: buildUrl + "/Build.wasm",
+        dataUrl: buildUrl + "/WildSurvivorsBuild.data",
+        frameworkUrl: buildUrl + "/WildSurvivorsBuild.framework.js",
+        codeUrl: buildUrl + "/WildSurvivorsBuild.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Nut_Bolt",
@@ -92,27 +92,34 @@
       // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
       // expected to change.
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+//       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+//         // Mobile device style: fill the whole browser client area with the game canvas:
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
+//         var meta = document.createElement('meta');
+//         meta.name = 'viewport';
+//         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+//         document.getElementsByTagName('head')[0].appendChild(meta);
+//         container.className = "unity-mobile";
+//         canvas.className = "unity-mobile";
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+//         // To lower canvas resolution on mobile devices to gain some
+//         // performance, uncomment the following line:
+//         // config.devicePixelRatio = 1;
 
+// #if SHOW_DIAGNOSTICS
+//         // position the diagnostics icon in the corner on the canvas
+//         diagnostics_icon.style.position = "fixed";
+//         diagnostics_icon.style.bottom = "10px";
+//         diagnostics_icon.style.right = "0px";
+//         canvas.after(diagnostics_icon);
+// #endif
 
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
+//       } else {
+//         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "900px";
-        canvas.style.height = "600px";
-      }
+//         canvas.style.width = "900px";
+//         canvas.style.height = "600px";
+//       }
 
       loadingBar.style.display = "block";
 
@@ -175,7 +182,7 @@
         window.addEventListener('resize', resizeCanvas);
         window.addEventListener('load', resizeCanvas);
     </script>
-    <script>
+    <!-- <script>
       try {
           const hash = window.location.hash;
 
@@ -209,7 +216,7 @@
       } catch (error) {
           console.error("An error occurred while checking the hash:", error);
       }
-  </script>
+  </script> -->
 
     <script>
         (function () {
